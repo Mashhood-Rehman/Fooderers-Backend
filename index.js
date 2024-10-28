@@ -7,6 +7,10 @@ const bodyParser = require("body-parser")
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 
+app.use(express.json())
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/uploads', express.static('uploads'));
 
 
 
@@ -21,12 +25,9 @@ const stripe = require("stripe") ("sk_test_51PkqrUAusfi4SBU0ognZMrzTK9eJhstHcg0v
 
 
 
-app.use(express.json())
-
-app.use(cors());
 
 
-app.use(bodyParser.json());
+
 
 
 
