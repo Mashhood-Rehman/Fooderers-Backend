@@ -6,11 +6,14 @@ const app = express();
 const bodyParser = require("body-parser")
 const port = process.env.PORT || 5000;
 const mongoose = require("mongoose");
+const path = require('path');
 
 app.use(express.json())
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads'));
+app.use('/images', express.static(path.join(__dirname, '../frontend/src/Images')));
+
+
 
 
 
@@ -53,7 +56,6 @@ app.post("/create-checkout-sessions", async (req, res) => {
         currency: "usd",
         product_data: {
           name: item.name ,
-          // Image : [item.picture]
                 },
         unit_amount: item.price*100 ,
       },

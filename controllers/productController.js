@@ -4,7 +4,7 @@ const productModel = require("../models/product");
 const productcreate = (req, res) => {
   try {
     const { name, price, amount, category, description } = req.body;
-    const picture = req.file ? `/uploads/${req.file.filename}` : null;
+    const picture = req.file ? `/Images/${req.file.filename}` : null; 
     const productregister = new productModel({
       name,
             price,
