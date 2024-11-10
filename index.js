@@ -66,7 +66,7 @@ app.post("/create-checkout-sessions", async (req, res) => {
       payment_method_types: ["card"],
       line_items: lineItems,
       mode: "payment",
-      success_url: "http://localhost:5173/dispatch",
+      success_url: "http://localhost:5173/",
       cancel_url: "http://localhost:3000/cancel"
     });
 
